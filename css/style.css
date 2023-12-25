@@ -1,0 +1,16 @@
+body{
+    background:#24353F;
+}
+a:hover{
+text-decoration: underline !important;
+}
+input{
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+::-webkit-input-placeholder {
+    color:white !important;
+ }
+ #logOut a:hover{
+text-decoration: none !important;
+ }
