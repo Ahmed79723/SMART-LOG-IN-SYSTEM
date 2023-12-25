@@ -39,8 +39,14 @@ function checkUsers() {
   //   return test;
   // ! *******************************************these lines are for study and trial purposes only***********************************
   var successMsg = document.getElementById("successMsg");
-  if (usersList.length == 0) {
+  if (
+    usersList.length == 0 &&
+    nameValidation() &&
+    emailValidation() &&
+    passwordValidation()
+  ) {
     addUser();
+    signUpClear();
     successMsg.classList.remove("d-none");
   } else if (usersList.length != 0) {
     for (var i = 0; i < usersList.length; i++) {
@@ -53,10 +59,14 @@ function checkUsers() {
         return;
       }
     }
-    addUser();
-    userCheckAlert.classList.add("d-none");
-    successMsg.classList.remove("d-none");
-    // window.location.replace(url);
+    if (nameValidation() && emailValidation() && passwordValidation()) {
+      console.log("now u c me");
+      addUser();
+      signUpClear();
+      userCheckAlert.classList.add("d-none");
+      successMsg.classList.remove("d-none");
+      // window.location.replace(url);
+    }
   }
   //   switch (true) {
   //     case usersList.length == 0:
@@ -81,6 +91,13 @@ function checkUsers() {
   //       }
   //   }
 }
+// **************************************************clear sign up input*************************************************
+function signUpClear() {
+  userName.value = "";
+  userEmail.value = "";
+  userPassword.value = "";
+}
+
 // **************************************************sign up on click button*************************************************
 // function signUpButtonAction() {
 //   if (checkUsers()) {
@@ -211,5 +228,7 @@ function logInBtnAction() {
 //& ****************************************************************************************************************************
 var welcomeBox = document.getElementById("welcomeBox");
 var cartona = "";
-cartona = `<p class='text-center text-info'>Welcome, ${usersList[JSON.parse(localStorage.getItem("index"))].name}</p>`;
+cartona = `<p class='text-center text-info'>Welcome, ${
+  usersList[JSON.parse(localStorage.getItem("index"))].name
+}</p>`;
 welcomeBox.innerHTML = cartona;
