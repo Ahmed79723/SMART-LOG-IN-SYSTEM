@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="box my-5 p-5 shadow-lg w-75 m-auto bg-dark">
+                <h1 class="text-center mb-3 text-info">Smart Login System</h1>
+                <input class="form-control my-3" type="text" id="name" onkeyup="gValidation('/^[a-z]{3,20}$/gi','userName','nameAlert')"
+                    placeholder="Enter Your Name">
+                <p id="nameAlert" class="text-danger d-none my-2">User Name must be at least 3 characters, without any
+                    special character.</p>
+                <input class="form-control my-3" type="email" id="email" oninput="gValidation('/^[\w-\.]+@(gmail|icloud|yahoo)\.com$/gi','userEmail','emailAlert')"
+                    placeholder="Enter Your Email">
+                <p id="emailAlert" class="text-danger my-2 d-none">Invalid User Email, example for valid Email:
+                    alex@gmail.com.</p>
+                <input class="form-control my-3" type="password" id="password" oninput="gValidation('/^.{8,}$/gi','userPassword','passwordAlert')"
+                    placeholder="Enter Your Password">
+                <p id="passwordAlert" class="text-danger my-2 d-none">Password must be at least 8 characters.</p>
+                <p class="alert alert-danger text-center my-2 d-none" id="userCheckAlert">User Already Exists,Go To <a class="text-decoration-none text-dark" href="index.html">Log In Page?</a></p>
+                <button id="signUp" onclick="checkUsers()" class="btn btn-outline-info form-control mt-3">Sign
+                    Up</button>
+                <p id="successMsg" class="text-success text-center d-none my-2">User Created Successfully!</p>
+                <p class="text-white text-center mt-2">have an account? <a class="text-decoration-none text-white"
+                        href="index.html">Sign in</a></p>
+            </div>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

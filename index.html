@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="box my-5 p-5 shadow-lg w-75 m-auto bg-dark">
+                <h1 class="text-center mb-3 text-info">Smart Login System</h1>
+                <input class="form-control my-3" type="email" oninput="gValidation('/^[\w-\.]+@(gmail|icloud|yahoo)\.com$/gi','userEmail','emailAlert')" id="loginEmail" placeholder="Enter Your Email">
+                <p id="emailAlert" class="text-danger my-2 d-none">Invalid User Email, example for valid Email: alex@gmail.com.</p>
+                <input class="form-control my-3" type="password" oninput="gValidation('/^.{8,}$/gi','userPassword','passwordAlert')" id="loginPassword" placeholder="Enter Your Password">
+                <p id="passwordAlert" class="text-danger my-2 d-none">Password must be at least 8 characters.</p>
+                <p id="massage" class="text-danger my-2 d-none">User Not Found! ,please check Email and password again or Sign up first.</p>
+                <button onclick="logInBtnAction()" class="btn btn-outline-info form-control mt-3">Log in</button>
+                <p class="text-white text-center mt-2">Don’t have an account? <a class="text-decoration-none text-white"
+                        href="sign up.html">Sign Up</a></p>
+            </div>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

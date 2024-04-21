@@ -1,0 +1,65 @@
+body{
+    background:#24353F;
+}
+nav{
+    z-index: 500;
+}
+a:hover{
+text-decoration: underline !important;
+}
+input{
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+::-webkit-input-placeholder {
+    color:white !important;
+ }
+ #logOut a:hover{
+text-decoration: none !important;
+ }
+ .caption{
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+}
+
+#boxContainer{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boxItem{
+    width: 60%;
+    height: 500px;
+    background-image: url(../images/portfolio-1.jpg);
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#close{
+    
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+i{
+    font-size: 28px;
+    margin: 10px;
+    cursor: pointer;
+}
+.item img{
+    cursor: pointer;
+}
